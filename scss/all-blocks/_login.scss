@@ -1,0 +1,138 @@
+.login {
+  height: 100%;
+  color: $dark-blue;
+
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.login__inner {
+  width: 500px;
+  padding: 32px;
+  background-color: $white;
+  border-radius: 24px;
+  box-shadow: rgba($blue, $alpha: 0.2) 0px 8px 24px;
+}
+
+.login__heading {
+  margin: 0;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.login__text {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login__input {
+  width: 100%;
+  padding: 16px;
+  padding-left: 56px;
+  font-size: 18px;
+  line-height: 24px;
+  color: $dark-blue;
+  background-color: $gray;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background-size: 32px;
+  background-position: left 12px top 50%;
+  background-repeat: no-repeat;
+
+  &[name="password-input"] {
+    background-image: url("../images/password.svg");
+  }
+
+  &[name="email-input"] {
+    background-image: url("../images/email.svg");
+  }
+}
+
+.login__password {
+  position: relative;
+}
+
+.login__password-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-image: url("../images/visibility-on.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  &--hide {
+    background-image: url("../images/visibility-off.svg");
+  }
+}
+
+.login__submit-btn {
+  padding: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $blue;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+}
+
+@media only screen and(max-width: 500px) {
+  .login {
+    .container {
+      align-items: flex-end;
+      padding: 0;
+    }
+  }
+
+  .login__inner {
+    padding: 64px 24px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .login__text{
+    font-size: 14px;
+  }
+
+  .login__form {
+    gap: 20px;
+  }
+
+  .login__input {
+    font-size: 16px;
+    line-height: 22px;
+    background-size: 24px;
+    background-position: left 15px top 50%;
+  }
+
+  .login__submit-btn {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
