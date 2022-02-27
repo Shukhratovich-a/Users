@@ -1,0 +1,45 @@
+.users__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.user {
+  width: 277.5px;
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: rgba($blue, $alpha: 0.2) 0px 8px 24px;
+  transition: box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: rgba($blue, $alpha: 0.5) 0px 8px 24px;
+  }
+
+  &:active {
+    box-shadow: rgba($blue, $alpha: 0.2) 0px 8px 24px;
+  }
+}
+
+.user__avatar {
+  border-radius: 50%;
+  margin-right: 12px;
+  box-shadow: 0px 0px 0px 2px $white, 0px 0px 0px 4px $dark-blue;
+}
+
+.user__link {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  text-decoration: none;
+  color: $black;
+}
+
+.user__name {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.user__full-name {
+  margin: 0;
+}

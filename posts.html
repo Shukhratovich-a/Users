@@ -5,15 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <title>Document</title>
+    <title>ECbook</title>
   </head>
   <body>
-    <div class="container">
-      <button class="log-out">Log-out</button>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <a class="header__link" href="./index.html">
+          <img
+            class="header__logo"
+            src="https://via.placeholder.com/40"
+            alt=""
+            width="40"
+            height="40"
+          />
+        </a>
 
-      <ul class="posts__list">Loading...</ul>
-    </div>
+        <div class="header__right">
+          <img
+            class="header__user-avatar"
+            aria-label="user-avatar"
+            src="https://via.placeholder.com/40"
+            alt=""
+            width="40"
+            height="40"
+          />
 
+          <a class="header__text" href="#">Joshqin</a>
+
+          <div class="header__menu">
+            <a class="header__menu__text" href="#">Joshqin</a>
+            <button class="header__btn" name="log-out">Log-out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- User accaunt -->
+      <section class="user-posts">
+        <div class="container">
+          <a class="back-link" href="./index.html" title="Back to users">Back</a>
+          <div class="user-posts__inner">
+            <div class="loading">
+              <span class="loading__inner"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Posts -->
+      <section class="posts">
+        <div class="container">
+          <ul class="posts__list">
+            <li class="loading">
+              <span class="loading__inner"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- TEMPLATES -->
+    <!-- User accaunt template -->
+    <template id="user-post-template">
+      <img
+        class="user-posts__avatar"
+        src="./images/avatar.jpg"
+        alt="User's avatar"
+        width="120"
+        height="120"
+      />
+
+      <div class="user-posts__info">
+        <h3 class="user-posts__user-name">Bret</h3>
+        <p class="user-posts__user-fullname">Leanne Graham</p>
+        <a class="user-posts__link user-posts__link-email" href="mailto:Sincere@april.biz"
+          >Sincere@april.biz</a
+        >
+        <a class="user-posts__link user-posts__link-site" href="https://www.google.com"
+          >hildegard.org</a
+        >
+      </div>
+
+      <div class="user-posts__address">
+        <p class="user-posts__address__heading">Address</p>
+        <p class="user-posts__address__city">Kulas Light</p>
+        <p class="user-posts__address__street">Gwenborough</p>
+        <p class="user-posts__address__suite">Apt. 556</p>
+      </div>
+
+      <div class="user-posts__company">
+        <p class="user-posts__company__heading">Company</p>
+        <p class="user-posts__company__name">Romaguera-Crona</p>
+        <p class="user-posts__company__phrase">"Multi-layered client-server neural-net"</p>
+        <p class="user-posts__company__bs">Romaguera-Crona</p>
+      </div>
+    </template>
+
+    <!-- Post template -->
     <template id="post-template">
       <li class="post">
         <h3 class="post__title">
@@ -23,7 +114,7 @@
           quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit
           molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
         </p>
-        <a class="post__comments" href="./comments.html">Comments</a>
+        <a class="post__comments" href="./comments.html">Show comments</a>
       </li>
     </template>
 

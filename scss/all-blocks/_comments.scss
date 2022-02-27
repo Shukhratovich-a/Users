@@ -1,0 +1,52 @@
+.comments__list {
+  margin-bottom: 100px;
+}
+
+.comment {
+  padding: 20px;
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: rgba($blue, $alpha: 0.2) 0px 8px 24px;
+  transition: box-shadow 0.25s ease;
+
+  & + & {
+    margin-top: 30px;
+  }
+
+  &:hover {
+    box-shadow: rgba($blue, $alpha: 0.6) 0px 8px 24px;
+  }
+}
+
+.comment__title {
+  margin: 0;
+  margin-bottom: 12px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.comment__description {
+  margin: 0;
+  margin-bottom: 12px;
+  
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.comment__user-email {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    background-image: url("../images/email.svg");
+  }
+}

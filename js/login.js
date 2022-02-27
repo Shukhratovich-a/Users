@@ -1,14 +1,23 @@
+// SELECT ELEMENTS
 const elForm = document.querySelector(".login__form");
 const elEmailInput = document.querySelector(".login__input[name='email-input']");
 const elPasswordInput = document.querySelector(".login__input[name='password-input']");
 const elPasswordBtn = document.querySelector(".login__password-btn");
 
-elForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
+// CHECK INPUT
+const checkInput = (data) => {
+  if (data?.token) {
+    // Set user token
+    window.localStorage.setItem("token", data.token);
+    window.location.replace("index.html");
+    elForm.classList.remove("login__form--disabled");
+  } else {
+    elForm.classList.add("login__form--disabled");
+  }
+};
 
-  const emailInput = elEmailInput.value.trim();
-  const passwordInput = elPasswordInput.value.trim();
-
+// GET TOKEN
+const getToken = (emailInput, passwordInput) => {
   fetch("https://reqres.in/api/login/", {
     method: "POST",
     headers: {
@@ -21,15 +30,13 @@ elForm.addEventListener("submit", (evt) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data?.token) {
-        window.localStorage.setItem("token", data.token);
-
-        window.location.replace("index.html");
-      }
+      checkInput(data);
+      window.localStorage.setItem("email", emailInput);
     });
-});
+};
 
-elPasswordBtn.addEventListener("click", () => {
+// SHOW AND HIDE PASSWORD
+const showHidePassword = () => {
   if (elPasswordInput.type === "password") {
     elPasswordBtn.classList.add("login__password-btn--hide");
     elPasswordInput.type = "text";
@@ -37,4 +44,21 @@ elPasswordBtn.addEventListener("click", () => {
     elPasswordBtn.classList.remove("login__password-btn--hide");
     elPasswordInput.type = "password";
   }
-});
+};
+
+// FUNCTION LOGIN
+const login = (evt) => {
+  evt.preventDefault();
+
+  const emailInput = elEmailInput.value.trim();
+  const passwordInput = elPasswordInput.value.trim();
+
+  // Use get token function
+  getToken(emailInput, passwordInput);
+};
+
+// Use login function on submit
+elForm.addEventListener("submit", login);
+
+// Use show hide function on click
+elPasswordBtn.addEventListener("click", showHidePassword);

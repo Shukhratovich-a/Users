@@ -36,6 +36,7 @@
 }
 
 .login__form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -56,6 +57,11 @@
   background-position: left 12px top 50%;
   background-repeat: no-repeat;
 
+  &::placeholder {
+    color: $dark-blue;
+    opacity: 0.8;
+  }
+
   &[name="password-input"] {
     background-image: url("../images/password.svg");
   }
@@ -65,7 +71,7 @@
   }
 }
 
-.login__password {
+.login__password-input {
   position: relative;
 }
 
@@ -74,8 +80,9 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
   border: none;
   outline: none;
   background-color: transparent;
@@ -100,6 +107,28 @@
   border: none;
   border-radius: 12px;
   outline: none;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.login__disabled--text {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -150%);
+  display: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: $red;
+}
+
+.login__form--disabled {
+  .login__disabled--text {
+    display: block;
+  }
 }
 
 @media only screen and(max-width: 500px) {
@@ -116,7 +145,7 @@
     border-bottom-left-radius: 0px;
   }
 
-  .login__text{
+  .login__text {
     font-size: 14px;
   }
 

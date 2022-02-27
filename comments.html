@@ -5,17 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <title>Document</title>
+    <title>ECbook</title>
   </head>
   <body>
-    <div class="container">
-      <button class="log-out">Log-out</button>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <a class="header__link" href="./index.html">
+          <img
+            class="header__logo"
+            src="https://via.placeholder.com/40"
+            alt=""
+            width="40"
+            height="40"
+          />
+        </a>
 
-      <ul class="comments__list">
-        <li>Loading...</li>
-      </ul>
-    </div>
+        <div class="header__right">
+          <img
+            class="header__user-avatar"
+            aria-label="user-avatar"
+            src="https://via.placeholder.com/40"
+            alt=""
+            width="40"
+            height="40"
+          />
 
+          <a class="header__text" href="#">Joshqin</a>
+
+          <div class="header__menu">
+            <a class="header__menu__text" href="#">Joshqin</a>
+            <button class="header__btn" name="log-out">Log-out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- Comments -->
+      <section class="commnets">
+        <div class="container">
+          <a class="back-link" href="./posts.html" title="Back to posts">Back</a>
+
+          <ul class="comments__list">
+            <li class="loading">
+              <span class="loading__inner"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- TEMPLATES -->
+    <!-- Commnet template -->
     <template id="comment-template">
       <li class="comment">
         <h3 class="comment__title">

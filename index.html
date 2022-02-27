@@ -5,21 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <title>Document</title>
+    <title>ECbook</title>
   </head>
   <body>
-    <div class="container">
-      <button class="log-out">Log-out</button>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <a class="header__link" href="./index.html">
+          <img
+            class="header__logo"
+            src="https://via.placeholder.com/40"
+            alt=""
+            width="40"
+            height="40"
+          />
+        </a>
 
-      <ul class="users__list">Loading...</ul>
-    </div>
+        <div class="header__right">
+          <img
+            class="header__user-avatar"
+            aria-label="user-avatar"
+            src="https://via.placeholder.com/40"
+            alt=""
+            width="40"
+            height="40"
+          />
 
+          <a class="header__text" href="#">Joshqin</a>
+
+          <div class="header__menu">
+            <a class="header__menu__text" href="#">Joshqin</a>
+            <button class="header__btn" name="log-out">Log-out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- Users -->
+      <section class="users">
+        <div class="container">
+          <ul class="users__list">
+            <li class="loading">
+              <span class="loading__inner"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- TEMPLATES -->
+    <!-- User template -->
     <template id="user-template">
       <li class="user">
-        <h3 class="user__name">Bret</h3>
-        <p class="user__full-name">Leanne Graham</p>
-        <a class="user__mail" href="mailto:Sincere@april.biz">Sincere@april.biz</a>
-        <a href="./posts.html" class="user__posts">Post</a>
+        <a class="user__link" href="./posts.html">
+          <img class="user__avatar" src="./images/avatar.jpg" alt="" width="60" height="60" />
+          <div class="user__info">
+            <h3 class="user__name">Bret</h3>
+            <p class="user__full-name">Leanne Graham</p>
+          </div>
+        </a>
       </li>
     </template>
 
