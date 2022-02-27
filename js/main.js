@@ -47,6 +47,7 @@ async function getUser() {
 
   // Set user info
   elUserAvatar.src = user.avatar;
+  elUserAvatar.alt = user.first_name + " " + user.last_name + " image";
   elUserName.textContent = user.first_name + " " + user.last_name;
   elUserMenuName.textContent = user.first_name + " " + user.last_name;
 }

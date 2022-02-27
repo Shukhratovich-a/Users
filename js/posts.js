@@ -30,6 +30,8 @@ const renderUser = (object, node) => {
   const userPostTemplate = elUserPostTemplate.cloneNode(true);
 
   // Set info
+  userPostTemplate.querySelector(".user-posts__avatar").alt = object.username + "'s image";
+
   userPostTemplate.querySelector(".user-posts__user-name").textContent = object.username;
   userPostTemplate.querySelector(".user-posts__user-fullname").textContent = object.name;
 

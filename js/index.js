@@ -22,6 +22,7 @@ const renderUsers = (array, node) => {
 
     // Set content
     userTemplate.querySelector(".user").dataset.userId = user.id;
+    userTemplate.querySelector(".user__avatar").alt = user.username + "'s image";
     userTemplate.querySelector(".user__name").textContent = user.username;
     userTemplate.querySelector(".user__full-name").textContent = user.name;
 
