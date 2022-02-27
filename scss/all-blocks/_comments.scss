@@ -30,7 +30,7 @@
 .comment__description {
   margin: 0;
   margin-bottom: 12px;
-  
+
   &::first-letter {
     text-transform: uppercase;
   }
@@ -48,5 +48,14 @@
     height: 24px;
     margin-right: 12px;
     background-image: url("../images/email.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+@media only screen and(max-width: 500px) {
+  .comment__user-email {
+    font-size: 14px;
   }
 }
